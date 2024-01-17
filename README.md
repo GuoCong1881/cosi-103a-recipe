@@ -1,3 +1,3 @@
 # cosi-103a
-josh rueter
-jrueter@brandeis.edu
+# josh rueter
+# jrueter@brandeis.edu
