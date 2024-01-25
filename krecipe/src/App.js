@@ -57,6 +57,8 @@ function RecipeList({ recipes }) {
 
 function App() {
   const recipes = [
+    //This code right here is for the recipe board. You can change the images, instructions, and ingredients in this section here. 
+    //Simply replace the image URL's and ingredients. 
     {
       name: "Spaghetti Bolognese",
       description: "A classic Italian dish with a meaty, tomato sauce.",
@@ -86,7 +88,82 @@ function App() {
       ],
       instructions: "Cook the spaghetti according to the package instructions. Meanwhile, heat the olive oil in a pan and sauté the onion and garlic until soft. Add the ground beef and cook until browned. Add the tomatoes, salt, and pepper, and simmer for 15 minutes. Drain the spaghetti and serve with the sauce.",
       image: "https://www.foodandwine.com/thmb/JvZKHzwU7bkJFUrU4-1g0Xyz7Bw=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/FAW-recipes-crispy-buttermilk-fried-chicken-hero-01-3ccf6b983f47453192382073464fa7a5.jpg"
-    }
+    },
+    {
+      name: "Spaghetti Bolognese",
+      description: "A classic Italian dish with a meaty, tomato sauce.",
+      ingredients: [
+        "200g spaghetti",
+        "1 tbsp olive oil",
+        "1 onion, chopped",
+        "2 cloves of garlic, minced",
+        "200g ground beef",
+        "400g canned tomatoes",
+        "Salt and pepper to taste"
+      ],
+      instructions: "Cook the spaghetti according to the package instructions. Meanwhile, heat the olive oil in a pan and sauté the onion and garlic until soft. Add the ground beef and cook until browned. Add the tomatoes, salt, and pepper, and simmer for 15 minutes. Drain the spaghetti and serve with the sauce.",
+      image: "https://www.slimmingeats.com/blog/wp-content/uploads/2010/04/spaghetti-bolognese-32.jpg"
+    },
+    {
+      name: "Spaghetti Bolognese",
+      description: "A classic Italian dish with a meaty, tomato sauce.",
+      ingredients: [
+        "200g spaghetti",
+        "1 tbsp olive oil",
+        "1 onion, chopped",
+        "2 cloves of garlic, minced",
+        "200g ground beef",
+        "400g canned tomatoes",
+        "Salt and pepper to taste"
+      ],
+      instructions: "Cook the spaghetti according to the package instructions. Meanwhile, heat the olive oil in a pan and sauté the onion and garlic until soft. Add the ground beef and cook until browned. Add the tomatoes, salt, and pepper, and simmer for 15 minutes. Drain the spaghetti and serve with the sauce.",
+      image: "https://www.slimmingeats.com/blog/wp-content/uploads/2010/04/spaghetti-bolognese-32.jpg"
+    },
+    {
+      name: "Spaghetti Bolognese",
+      description: "A classic Italian dish with a meaty, tomato sauce.",
+      ingredients: [
+        "200g spaghetti",
+        "1 tbsp olive oil",
+        "1 onion, chopped",
+        "2 cloves of garlic, minced",
+        "200g ground beef",
+        "400g canned tomatoes",
+        "Salt and pepper to taste"
+      ],
+      instructions: "Cook the spaghetti according to the package instructions. Meanwhile, heat the olive oil in a pan and sauté the onion and garlic until soft. Add the ground beef and cook until browned. Add the tomatoes, salt, and pepper, and simmer for 15 minutes. Drain the spaghetti and serve with the sauce.",
+      image: "https://www.slimmingeats.com/blog/wp-content/uploads/2010/04/spaghetti-bolognese-32.jpg"
+    },
+    {
+      name: "Spaghetti Bolognese",
+      description: "A classic Italian dish with a meaty, tomato sauce.",
+      ingredients: [
+        "200g spaghetti",
+        "1 tbsp olive oil",
+        "1 onion, chopped",
+        "2 cloves of garlic, minced",
+        "200g ground beef",
+        "400g canned tomatoes",
+        "Salt and pepper to taste"
+      ],
+      instructions: "Cook the spaghetti according to the package instructions. Meanwhile, heat the olive oil in a pan and sauté the onion and garlic until soft. Add the ground beef and cook until browned. Add the tomatoes, salt, and pepper, and simmer for 15 minutes. Drain the spaghetti and serve with the sauce.",
+      image: "https://www.slimmingeats.com/blog/wp-content/uploads/2010/04/spaghetti-bolognese-32.jpg"
+    },
+    {
+      name: "Spaghetti Bolognese",
+      description: "A classic Italian dish with a meaty, tomato sauce.",
+      ingredients: [
+        "200g spaghetti",
+        "1 tbsp olive oil",
+        "1 onion, chopped",
+        "2 cloves of garlic, minced",
+        "200g ground beef",
+        "400g canned tomatoes",
+        "Salt and pepper to taste"
+      ],
+      instructions: "Cook the spaghetti according to the package instructions. Meanwhile, heat the olive oil in a pan and sauté the onion and garlic until soft. Add the ground beef and cook until browned. Add the tomatoes, salt, and pepper, and simmer for 15 minutes. Drain the spaghetti and serve with the sauce.",
+      image: "https://www.slimmingeats.com/blog/wp-content/uploads/2010/04/spaghetti-bolognese-32.jpg"
+    },
   ];
 
   return (
