@@ -20,7 +20,7 @@ function RecipeBoard({ recipes }) {
 }
 
 function TopRecipes() {
-  return <h2 className="top-recipes">Today's Top Recipes</h2>;
+  return <h2 className="top-recipes">All Of Our Recipes</h2>;
 }
 
 function Recipe({ recipe }) {
