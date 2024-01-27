@@ -1,11 +1,17 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   padding: 20px;
-  background-color: #f8f8f8;
+  background-color: rgb(255, 223, 191);
+  text-align: center;
+}
+
+h1{
+  color: #ffffff;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 h2 {
-  color: #333;
+  color: #ffffff;
 }
 
 img {
@@ -31,7 +37,9 @@ button:hover {
 div {
   margin-bottom: 20px;
   padding: 20px;
-  background-color: white;
+  background-color: rgb(255, 223, 191);
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
 }
+
