@@ -3,18 +3,25 @@ import './App.css';
 
 
 function Header() {
-  return <h1 className="header">K's Kuisine</h1>;
+  return (
+    <div className="header-div">
+      <h1 className="header">K's Kuisine</h1>
+      <h2>Welcome!</h2>
+    </div>
+  );
 }
+
 
 function RecipeBoard({ recipes }) {
   return (
     <div className="recipe-board">
-      {recipes.map((recipe, index) => (
-        <div key={index}>
-          <img src={recipe.image} alt={recipe.name} />
-          <p>{recipe.name}</p>
-        </div>
-      ))}
+      <div className="image-container">
+        {recipes.slice(0, 4).map((recipe, index) => (
+          <div key={index}>
+            <img src={recipe.image} alt={recipe.name} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
@@ -240,6 +247,7 @@ function App() {
   return (
     <div>
       <Header />
+      <RecipeBoard recipes={recipes} />
       <TopRecipes />
       <RecipeList recipes={recipes} />
     </div>

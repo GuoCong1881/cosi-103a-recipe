@@ -1,17 +1,22 @@
 body {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  padding: 20px;
-  background-color: rgb(255, 223, 191);
+  font-family: Tahoma, sans-serif;
+  padding: 0 20px 20px; /* Remove the top padding */
+  background-color: rgb(252, 206, 160);
   text-align: center;
 }
 
 h1{
   color: #ffffff;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Tahoma, sans-serif;
+  font-size: 50px;
 }
 
+h1.header {
+  margin-bottom: 10px; /* Adjust this value as needed */
+}
 h2 {
   color: #ffffff;
+  margin-top: 0; /* Remove the default top margin */
 }
 
 img {
@@ -34,12 +39,59 @@ button:hover {
   background-color: #0056b3;
 }
 
+
+
 div {
-  margin-bottom: 20px;
-  padding: 20px;
-  background-color: rgb(255, 223, 191);
+  margin-bottom: 10px; /* Adjust this value as needed */
+  padding: 15px;
+  background-color: rgb(255, 220, 185);
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 0px rgba(0,0,0,0.1);
   text-align: center;
+  padding-top: 40px; 
 }
+
+.header-div {
+  background-color: rgb(251, 187, 124);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  padding: 0px;
+}
+
+.recipe {
+  background-color: rgb(255, 202, 149);
+  color: #000000;
+}
+
+.recipe-header {
+  color: #ffffff; 
+}
+
+.recipe-board {
+  display: flex;
+  justify-content: center;
+}
+
+.recipe-board .image-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0px;
+}
+
+.recipe-board .image-container img {
+  width: 300px; /* adjust this value to your liking */
+  height: 300px; /* adjust this value to your liking */
+  object-fit: cover;
+}
+
+.top-recipes {
+  font-size: 2em; /* Adjust this value as needed */
+}
+
+.no-list-style {
+  list-style-type: none;
+}
+
 
