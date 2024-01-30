@@ -2,20 +2,24 @@ import React, { useState } from 'react';
 import './App.css';
 
 
+// This component represents the header section of the app
 function Header() {
   return (
     <div className="header-div">
-      <h1 className="header">K's Kuisine</h1>
-      <h2>Welcome!</h2>
+      <h1 className="header">K's Kuisine</h1> {/* Displaying the app name */}
+      <h2>Welcome!</h2> {/* Displaying a welcome message */}
     </div>
   );
 }
 
 
+
+// This component represents the recipe board section of the app
 function RecipeBoard({ recipes }) {
   return (
     <div className="recipe-board">
       <div className="image-container">
+        {/* Displaying the first 4 recipe images */}
         {recipes.slice(0, 4).map((recipe, index) => (
           <div key={index}>
             <img src={recipe.image} alt={recipe.name} />
@@ -26,10 +30,21 @@ function RecipeBoard({ recipes }) {
   );
 }
 
+/**
+ * Renders the heading for today's top recipes.
+ * @returns {JSX.Element} The heading element.
+ */
 function TopRecipes() {
   return <h2 className="top-recipes">Today's Top Recipes</h2>;
 }
 
+/**
+ * Renders a recipe component.
+ *
+ * @param {Object} props - The props object.
+ * @param {Object} props.recipe - The recipe object containing name, image, description, ingredients, and instructions.
+ * @returns {JSX.Element} The recipe component.
+ */
 function Recipe({ recipe }) {
   const [showDetails, setShowDetails] = useState(false);
 
@@ -58,6 +73,12 @@ function Recipe({ recipe }) {
   );
 }
 
+/**
+ * Renders a list of recipes.
+ *
+ * @param {Object[]} recipes - An array of recipe objects.
+ * @returns {JSX.Element} The rendered recipe list component.
+ */
 function RecipeList({ recipes }) {
   return (
     <div className="recipe-list">
@@ -68,10 +89,14 @@ function RecipeList({ recipes }) {
   );
 }
 
+/**
+ * Represents the actual recipes and their components.
+ * @returns {JSX.Element} The JSX element representing the App component.
+ */
 function App() {
   const recipes = [
-    //This code right here is for the recipe board. You can change the images, instructions, and ingredients in this section here. 
-    //Simply replace the image URL's and ingredients. 
+    //This code right here is for the recipe board. You can change the images, instructions,
+    //and ingredients in this section here. It is the blueprint for all recipes we have.
     {
       name: "Belgian Waffles",
       description: "Do you like waffles? Well then you’ll love Belgian waffles! Belgian waffles are basically waffles 2.0, these thick, chewy, buttery discs of deliciousness will have you hooked from the first bite.",
