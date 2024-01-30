@@ -1,3 +1,4 @@
+/* Styles for the body element */
 body {
   font-family: Tahoma, sans-serif;
   padding: 0 20px 20px; /* Remove the top padding */
@@ -5,26 +6,32 @@ body {
   text-align: center;
 }
 
-h1{
+/* Styles for h1 elements */
+h1 {
   color: #ffffff;
   font-family: Tahoma, sans-serif;
   font-size: 50px;
 }
 
+/* Styles for h1 elements with class "header" */
 h1.header {
   margin-bottom: 10px; /* Adjust this value as needed */
 }
+
+/* Styles for h2 elements */
 h2 {
   color: #ffffff;
   margin-top: 0; /* Remove the default top margin */
 }
 
+/* Styles for img elements */
 img {
   width: 300px;
   height: 200px;
   object-fit: cover;
 }
 
+/* Styles for button elements */
 button {
   margin-top: 10px;
   padding: 10px 20px;
@@ -35,12 +42,12 @@ button {
   cursor: pointer;
 }
 
+/* Styles for button elements on hover */
 button:hover {
   background-color: #0056b3;
 }
 
-
-
+/* Styles for div elements */
 div {
   margin-bottom: 10px; /* Adjust this value as needed */
   padding: 15px;
@@ -51,6 +58,7 @@ div {
   padding-top: 40px; 
 }
 
+/* Styles for div elements with class "header-div" */
 .header-div {
   background-color: rgb(251, 187, 124);
   position: fixed;
@@ -60,38 +68,43 @@ div {
   padding: 0px;
 }
 
+/* Styles for elements with class "recipe" */
 .recipe {
   background-color: rgb(255, 202, 149);
   color: #000000;
 }
 
+/* Styles for elements with class "recipe-header" */
 .recipe-header {
   color: #ffffff; 
 }
 
+/* Styles for elements with class "recipe-board" */
 .recipe-board {
   display: flex;
   justify-content: center;
 }
 
+/* Styles for elements with class "image-container" inside elements with class "recipe-board" */
 .recipe-board .image-container {
   display: flex;
   justify-content: flex-start;
   gap: 0px;
 }
 
+/* Styles for img elements inside elements with class "image-container" */
 .recipe-board .image-container img {
   width: 300px; /* adjust this value to your liking */
   height: 300px; /* adjust this value to your liking */
   object-fit: cover;
 }
 
+/* Styles for elements with class "top-recipes" */
 .top-recipes {
   font-size: 2em; /* Adjust this value as needed */
 }
 
+/* Styles to remove list-style from elements */
 .no-list-style {
   list-style-type: none;
 }
-
-
