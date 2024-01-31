@@ -5,7 +5,6 @@ body {
     text-align: center;
   }
 
-
 /* Styles for the top header of the recipe section (image, name, description) */
 .recipe-top {
     margin-bottom: 20px;
@@ -33,7 +32,6 @@ body {
             font-size: 24px;
             margin-bottom: 24px;
         }
-
         /* Styling for the description */
         .recipe-description{ 
             font-size: 16px;
@@ -41,9 +39,6 @@ body {
         }
     }
 }
-
-
-
 
 /* Styling for h2 elements, which includes description, instruction, and ingreidents headers */
 h2 {
