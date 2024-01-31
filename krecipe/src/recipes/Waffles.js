@@ -6,11 +6,11 @@ const Waffles = () => {
     return (
         <div className="recipe">
             <div className="recipe-top">
-                <img src="waffles.jpg" alt="Waffles" className="recipe-image" />
+      image: "https://stordfkenticomedia.blob.core.windows.net/df-us/rms/media/recipemediafiles/recipes/retail/x17/2020_belgian-style-waffles_16700_600x600.jpg?ext=.jpg"
+                <img src="" alt="Waffles" className="recipe-image" />
                 <div className="recipe-vitals">
                     <h1 className="recipe-title">Belgian Waffles</h1>
-                    <h2 className="recipe-heading">Description</h2>
-                    <p className="recipe-description">Insert your description here</p>
+                    <p className="recipe-description">Do you like waffles? Well then you’ll love Belgian waffles! Belgian waffles are basically waffles 2.0, these thick, chewy, buttery discs of deliciousness will have you hooked from the first bite.</p>
                 </div>
             </div>
                 <h2 className="recipe-heading">Ingredients</h2>

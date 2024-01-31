@@ -9,7 +9,6 @@ const Souffle = () => {
                 <img src="waffles.jpg" alt="Souffle" className="recipe-image" />
                 <div className="recipe-vitals">
                     <h1 className="recipe-title">Belgian Souffle</h1>
-                    <h2 className="recipe-heading">Description</h2>
                     <p className="recipe-description">Insert your description here</p>
                 </div>
             </div>
