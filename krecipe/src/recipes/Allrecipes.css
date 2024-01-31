@@ -1,0 +1,32 @@
+/* Image */
+.recipe-image {
+    width: 100%;
+    height: auto;
+}
+
+/* Description */
+.recipe-description {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Ingredients */
+.recipe-ingredients {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.recipe-ingredients ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+/* Instructions */
+.recipe-instructions {
+    font-size: 16px;
+}
+
+.recipe-instructions ol {
+    list-style-type: decimal;
+    margin-left: 20px;
+}
