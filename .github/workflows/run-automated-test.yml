@@ -1,0 +1,25 @@
+name: Run Tests
+
+on: pull_request
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v4
+
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        
+    - name: Change working directory
+      run: cd krecipe
+      
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run tests
+      run: npm test
