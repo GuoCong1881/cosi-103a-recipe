@@ -14,12 +14,13 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '20'
-        
-    - name: Change working directory
-      run: cd krecipe
       
     - name: Install dependencies
-      run: npm install
+      run:
+        cd krecipe 
+        npm install
 
     - name: Run tests
-      run: npm test
+      run: 
+        cd krecipe
+        npm test
