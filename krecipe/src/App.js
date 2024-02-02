@@ -234,7 +234,6 @@ function App() {
         "½ Teaspoon of Baking Soda",
         "1 Teaspoon of Salt",
         "2 ½ Teaspoons of Cinnamon"
-        
       ],
       instructions: ["Preheat your oven to 350 F, and line a baking sheet with parchment paper.",
         "In a large mixing bowl, stir together the butter (softened) with 1 cup of your sugar and all of your brown sugar until light and fluffy, about 5 minutes.",
@@ -256,7 +255,6 @@ function App() {
         "4 Large Eggs, Separated",
         "1 Tablespoon Unsalted Butter",
         "1 Lemon"
-        
       ],
       instructions: ["Preheat the oven to 400 F and grease your ramekins with butter.",
       "In a medium saucepan, combine 1 cup of raspberries with ¼ cup of sugar and heat on low, stirring frequently, until the sugar is dissolved.",
