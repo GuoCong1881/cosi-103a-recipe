@@ -1,13 +1,28 @@
 import React, { useState } from 'react';
 import './App.css';
 
+function Navbar(){
+  return(
+    <div className="navbar-div">
+  <div className="navbar-item"><span>Home</span></div>
+  <div className="navbar-item"><a href="/workspaces/cosi-103a/krecipe/src/recipes/Alfredo.js">Alfredo</a></div>
+  <div className="navbar-item"><span>Grilled Cheese</span></div>
+  <div className="navbar-item"><span>Hawaiian Haystacks</span></div>
+  <div className="navbar-item"><span>Smoothie</span></div>
+  <div className="navbar-item"><span>Snickerdoodle</span></div>
+  <div className="navbar-item"><span>Souffle</span></div>
+  <div className="navbar-item"><span>Waffles</span></div>
+  <div className="navbar-item"><span>About</span></div>
+</div>
+  );
+
+}
 
 // This component represents the header section of the app
 function Header() {
   return (
     <div className="header-div">
       <h1 className="header">K's Kuisine</h1> {/* Displaying the app name */}
-      <h2>Welcome!</h2> {/* Displaying a welcome message */}
     </div>
   );
 }
@@ -267,8 +282,11 @@ function App() {
     },
   ];
 
+  
+
   return (
     <div>
+      <Navbar/>
       <Header />
       <RecipeBoard recipes={recipes} />
       <TopRecipes />
