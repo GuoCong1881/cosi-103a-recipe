@@ -1,22 +1,21 @@
 import React, { useState } from 'react';
 import './App.css';
+import Navbar from "./components/Navbar";
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+} from "react-router-dom";
+import Home from "./recipes/Home";
+import Alfredo from "./recipes/Alfredo";
+import GrilledCheese from "./recipes/GrilledCheese";
+import Snickerdoodles from "./recipes/Snickerdoodles";
+import Waffles from "./recipes/Waffles";
+import Smoothie from "./recipes/Smoothie";
+import Hawaii from "./recipes/Hawaii";
+import Souffle from "./recipes/Souffle";
 
-function Navbar(){
-  return(
-    <div className="navbar-div">
-  <div className="navbar-item"><span>Home</span></div>
-  <div className="navbar-item"><a href="/workspaces/cosi-103a/krecipe/src/recipes/Alfredo.js">Alfredo</a></div>
-  <div className="navbar-item"><span>Grilled Cheese</span></div>
-  <div className="navbar-item"><span>Hawaiian Haystacks</span></div>
-  <div className="navbar-item"><span>Smoothie</span></div>
-  <div className="navbar-item"><span>Snickerdoodle</span></div>
-  <div className="navbar-item"><span>Souffle</span></div>
-  <div className="navbar-item"><span>Waffles</span></div>
-  <div className="navbar-item"><span>About</span></div>
-</div>
-  );
 
-}
 
 // This component represents the header section of the app
 function Header() {
@@ -286,7 +285,27 @@ function App() {
 
   return (
     <div>
-      <Navbar/>
+      <Router>
+            <Navbar />
+            <Routes>
+                <Route path="/Home" element={<Home />} />
+                <Route path="/Alfredo" element={<Alfredo />} />
+                <Route
+                    path="/GrilledCheese"
+                    element={<GrilledCheese />}
+                />
+                <Route
+                    path="/Hawaii"
+                    element={<Hawaii />}
+                />
+                <Route path="/Smoothie" element={<Smoothie />} />
+                <Route path="/Souffle" element={<Souffle />} />
+                <Route
+                    path="/Waffles"
+                    element={<Waffles />}
+                />
+            </Routes>
+        </Router>
       <Header />
       <RecipeBoard recipes={recipes} />
       <TopRecipes />
