@@ -6,7 +6,6 @@ import {
     Routes,
     Route,
 } from "react-router-dom";
-import Home from "./recipes/Home";
 import Alfredo from "./recipes/Alfredo";
 import GrilledCheese from "./recipes/GrilledCheese";
 import Snickerdoodles from "./recipes/Snickerdoodles";
@@ -17,7 +16,7 @@ import Souffle from "./recipes/Souffle";
 
 
 
-// This component represents the header section of the app
+// This componennt represents the header section of the app
 function Header() {
   return (
     <div className="header-div">
@@ -102,6 +101,8 @@ function RecipeList({ recipes }) {
     </div>
   );
 }
+
+
 
 /**
  * Represents the actual recipes and their components.
@@ -288,7 +289,6 @@ function App() {
       <Router>
             <Navbar />
             <Routes>
-                <Route path="/Home" element={<Home />} />
                 <Route path="/Alfredo" element={<Alfredo />} />
                 <Route
                     path="/GrilledCheese"
@@ -300,16 +300,15 @@ function App() {
                 />
                 <Route path="/Smoothie" element={<Smoothie />} />
                 <Route path="/Souffle" element={<Souffle />} />
-                <Route
-                    path="/Waffles"
-                    element={<Waffles />}
+                <Route path="/Snickerdoodles" element={<Snickerdoodles />} />
+                <Route path="/Waffles" element={<Waffles />} 
                 />
             </Routes>
         </Router>
       <Header />
-      <RecipeBoard recipes={recipes} />
       <TopRecipes />
-      <RecipeList recipes={recipes} />
+      <RecipeBoard recipes={recipes} />
+      
     </div>
   );
 }

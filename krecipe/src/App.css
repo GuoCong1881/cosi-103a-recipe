@@ -103,6 +103,9 @@ div {
 /* Styles for elements with class "top-recipes" */
 .top-recipes {
   font-size: 2em; /* Adjust this value as needed */
+  text-align: center;
+  margin-top: 50px;
+  height: 1px;
 }
 
 /* Styles to remove list-style from elements */
@@ -110,44 +113,6 @@ div {
   list-style-type: none;
 }
 
-.navbar-div{
-  color:rgb(251, 187, 124);
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  background-color: rgb(251, 187, 124);
-  left: 0;
-  width: 100%; 
-  height: 28px;
 
-}
-
-.navbar-div .navbar-item {
-  margin-right: 40px; /* Adjust as needed */
-  font-size: 16px;
-  display: flex;
-  justify-content: center; /* Aligns items horizontally */
-  align-items: center; /* Aligns items vertically */
-  height: 13px; 
-  padding: 13px;
-  
-}
-
-.navbar-item{
-  margin-bottom: 10px; /* Adjust this value as needed */
-  padding: 10px;
-  background-color: rgb(255, 220, 185);
-  border-radius: 5px;
-  box-shadow: 0 0 0px rgba(0,0,0,0.1);
-  text-align: center;
-  padding-top: 20px; 
-}
-
-.navbar-div .navbar-item span {
-  display: inline-block;
-  padding-top: -100px; /* Adjust as needed */
-}
 
 

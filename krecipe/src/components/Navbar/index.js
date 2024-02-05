@@ -25,7 +25,7 @@ const Navbar = () => {
                         Grilled Cheese
                     </NavLink>
                     <NavLink to="/Hawaii" activeStyle>
-                        Hawaii
+                        Hawaiian Haystacks
                     </NavLink>
                     <NavLink to="/Smoothie" activeStyle>
                         Smoothie
@@ -33,14 +33,16 @@ const Navbar = () => {
                     <NavLink to="/Souffle" activeStyle>
                         Souffle
                     </NavLink>
-                    {/* Second Nav */}
-                    {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
-                </NavMenu>
-                <NavBtn>
-                    <NavBtnLink to="/Waffles">
+                    <NavLink to="/Snickerdoodles" activeStyle>
+                        Snickerdoodles
+                    </NavLink>
+                    <NavLink to="/Waffles" activeStyle>
                         Waffles
-                    </NavBtnLink>
-                </NavBtn>
+                    </NavLink>
+                    <NavLink to="/Waffles" activeStyle>
+                        About
+                    </NavLink>
+                </NavMenu>
             </Nav>
         </>
     );
