@@ -1,6 +1,5 @@
 import React from 'react';
-import React from 'react';
-import './allrecipes.css';
+import '/workspaces/cosi-103a/krecipe/src/recipes/Allrecipes.css';
 
 const GrilledCheese = () => {
     return (

@@ -1,13 +1,26 @@
 import React, { useState } from 'react';
 import './App.css';
+import Navbar from "./components/Navbar";
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+} from "react-router-dom";
+import Alfredo from "./recipes/Alfredo";
+import GrilledCheese from "./recipes/GrilledCheese";
+import Snickerdoodles from "./recipes/Snickerdoodles";
+import Waffles from "./recipes/Waffles";
+import Smoothie from "./recipes/Smoothie";
+import Hawaii from "./recipes/Hawaii";
+import Souffle from "./recipes/Souffle";
 
 
-// This component represents the header section of the app
+
+// This componennt represents the header section of the app
 function Header() {
   return (
     <div className="header-div">
       <h1 className="header">K's Kuisine</h1> {/* Displaying the app name */}
-      <h2>Welcome!</h2> {/* Displaying a welcome message */}
     </div>
   );
 }
@@ -88,6 +101,8 @@ function RecipeList({ recipes }) {
     </div>
   );
 }
+
+
 
 /**
  * Represents the actual recipes and their components.
@@ -267,12 +282,33 @@ function App() {
     },
   ];
 
+  
+
   return (
     <div>
+      <Router>
+            <Navbar />
+            <Routes>
+                <Route path="/Alfredo" element={<Alfredo />} />
+                <Route
+                    path="/GrilledCheese"
+                    element={<GrilledCheese />}
+                />
+                <Route
+                    path="/Hawaii"
+                    element={<Hawaii />}
+                />
+                <Route path="/Smoothie" element={<Smoothie />} />
+                <Route path="/Souffle" element={<Souffle />} />
+                <Route path="/Snickerdoodles" element={<Snickerdoodles />} />
+                <Route path="/Waffles" element={<Waffles />} 
+                />
+            </Routes>
+        </Router>
       <Header />
-      <RecipeBoard recipes={recipes} />
       <TopRecipes />
-      <RecipeList recipes={recipes} />
+      <RecipeBoard recipes={recipes} />
+      
     </div>
   );
 }

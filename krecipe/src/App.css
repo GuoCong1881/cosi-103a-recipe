@@ -66,6 +66,7 @@ div {
   left: 0;
   width: 100%; 
   padding: 0px;
+  height: 103px;
 }
 
 /* Styles for elements with class "recipe" */
@@ -102,9 +103,16 @@ div {
 /* Styles for elements with class "top-recipes" */
 .top-recipes {
   font-size: 2em; /* Adjust this value as needed */
+  text-align: center;
+  margin-top: 50px;
+  height: 1px;
 }
 
 /* Styles to remove list-style from elements */
 .no-list-style {
   list-style-type: none;
 }
+
+
+
+
