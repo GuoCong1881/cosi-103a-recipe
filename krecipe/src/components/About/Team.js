@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Team.css"
 
-const TeamMember = ({ member }) => {
+export const TeamMember = ({ member }) => {
     return (
       <div className="team-member">
         <h2>{member.name}</h2>

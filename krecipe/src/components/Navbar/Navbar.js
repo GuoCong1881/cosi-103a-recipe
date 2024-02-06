@@ -7,10 +7,11 @@ import {
     NavBtn,
     NavBtnLink,
 } from "./NavbarElements";
+
  
 const Navbar = () => {
     return (
-        <>
+        <div className="navbar">
             <Nav>
                 <Bars />
  
@@ -18,12 +19,12 @@ const Navbar = () => {
                     <NavLink to="/" >
                         Home
                     </NavLink>
-                    <NavLink to="/About" activeStyle>
+                    <NavLink to="/About">
                         About
                     </NavLink>
                 </NavMenu>
             </Nav>
-        </>
+        </div>
     );
 };
  

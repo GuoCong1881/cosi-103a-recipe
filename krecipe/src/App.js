@@ -17,7 +17,7 @@ import Team from "./components/About/Team";
 
 
 // This componennt represents the header section of the app
-function Header() {
+export function Header() {
   return (
     <div className="header-div">
       <h1 className="header">K's Kuisine</h1> {/* Displaying the app name */}
@@ -28,7 +28,7 @@ function Header() {
 
 
 // This component represents the recipe board section of the app
-function RecipeBoard({ recipes }) {
+export function RecipeBoard({ recipes }) {
   return (
     /*
     <div className="recipe-board">
@@ -61,7 +61,7 @@ function RecipeBoard({ recipes }) {
  * Renders the heading for today's top recipes.
  * @returns {JSX.Element} The heading element.
  */
-function TopRecipes() {
+export function TopRecipes() {
   return <h2 className="top-recipes">Today's Top Recipes</h2>;
 }
 
@@ -72,7 +72,7 @@ function TopRecipes() {
  * @param {Object} props.recipe - The recipe object containing name, image, description, ingredients, and instructions.
  * @returns {JSX.Element} The recipe component.
  */
-function Recipe({ recipe }) {
+export function Recipe({ recipe }) {
   const [showDetails, setShowDetails] = useState(false);
 
   return (
@@ -286,8 +286,6 @@ function App() {
     },
   ];
 
-  
-
   return (
     <div>
       <Router>
@@ -321,8 +319,5 @@ function App() {
     </div>
   );
 }
-
-
-
 
 export default App;
