@@ -1,5 +1,5 @@
 import React from 'react';
-import '/workspaces/cosi-103a/krecipe/src/recipes/Allrecipes.css';
+import './Allrecipes.css';
 
 const Alfredo = () => {
     return (
