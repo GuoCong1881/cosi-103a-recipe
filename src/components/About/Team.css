@@ -1,0 +1,11 @@
+
+.team-member h2, .team-member p {
+    width: 100%; /* Adjust this value as needed */
+    overflow-wrap: break-word; /* This will prevent the text from overflowing */
+  }
+
+.team-container {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}

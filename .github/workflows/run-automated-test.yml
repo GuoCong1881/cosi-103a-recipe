@@ -17,10 +17,8 @@ jobs:
       
     - name: Install dependencies
       run:
-        cd krecipe 
-        npm install
+        npm ci
 
     - name: Run tests
       run: 
-        cd krecipe
         npm test

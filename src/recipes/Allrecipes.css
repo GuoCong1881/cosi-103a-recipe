@@ -1,0 +1,62 @@
+/* background styling for the page as a whole */
+body {
+    font-family: Tahoma, sans-serif;
+    background-color: rgb(252, 206, 160);
+    text-align: center;
+  }
+
+/* Styles for the top header of the recipe section (image, name, description) */
+.recipe-top {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: rgb(255, 220, 185);
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    text-align: center;
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .recipe-image {
+        width: 400px; 
+        height: 400px; 
+        object-fit: cover;
+        display: flex;
+        justify-content: flex-start; /* Align to the left */
+        align-items: flex-start;
+    }
+    .recipe-vitals{
+        /* Styles for img elements */
+        /* Styling for the title */
+        .recipe-title {
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+        /* Styling for the description */
+        .recipe-description{ 
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+/* Styling for h2 elements, which includes description, instruction, and ingreidents headers */
+h2 {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* styling for ingredients list */
+.recipe-list ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    text-align: left;
+}
+
+/* styling for instructions list */
+.recipe-list ol {
+    list-style-type: decimal;
+    margin-left: 20px;
+    text-align: left;
+}

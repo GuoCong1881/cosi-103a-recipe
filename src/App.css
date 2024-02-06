@@ -29,13 +29,14 @@ img {
   width: 300px;
   height: 200px;
   object-fit: cover;
+  padding: 10px; /* Add some padding inside the box */
 }
 
 /* Styles for button elements */
 button {
   margin-top: 10px;
   padding: 10px 20px;
-  background-color: #007BFF;
+  background-color:  rgb(251, 187, 124);
   color: white;
   border: none;
   border-radius: 5px;
@@ -44,7 +45,7 @@ button {
 
 /* Styles for button elements on hover */
 button:hover {
-  background-color: #0056b3;
+  background-color:  rgb(238, 151, 63);
 }
 
 /* Styles for div elements */
@@ -66,6 +67,7 @@ div {
   left: 0;
   width: 100%; 
   padding: 0px;
+  height: 103px;
 }
 
 /* Styles for elements with class "recipe" */
@@ -85,6 +87,29 @@ div {
   justify-content: center;
 }
 
+.recipe-board-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recipe-description {
+  display: flex;
+  flex-direction: column;
+  width: 400px; /* Set the width of the box */
+  height: 200px;
+  padding: 10px; /* Add some padding inside the box */
+}
+
+.recipe-summary {
+  display: flex;
+  margin-bottom: 20px;
+  width: 800px; /* Set the width of the box */
+  height: 300px; /* Set the height of the box */
+  box-sizing: border-box; /* Include padding and border in the box's total width and height */
+}
+
+
 /* Styles for elements with class "image-container" inside elements with class "recipe-board" */
 .recipe-board .image-container {
   display: flex;
@@ -102,9 +127,16 @@ div {
 /* Styles for elements with class "top-recipes" */
 .top-recipes {
   font-size: 2em; /* Adjust this value as needed */
+  text-align: center;
+  margin-top: 50px;
+  height: 1px;
 }
 
 /* Styles to remove list-style from elements */
 .no-list-style {
   list-style-type: none;
 }
+
+
+
+

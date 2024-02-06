@@ -1,13 +1,26 @@
 import React, { useState } from 'react';
 import './App.css';
+import Navbar from "./components/Navbar/Navbar";
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route
+} from "react-router-dom";
+import Alfredo from "./recipes/Alfredo";
+import GrilledCheese from "./recipes/GrilledCheese";
+import Snickerdoodles from "./recipes/Snickerdoodles";
+import Waffles from "./recipes/Waffles";
+import Smoothie from "./recipes/Smoothie";
+import Hawaii from "./recipes/Hawaii";
+import Souffle from "./recipes/Souffle";
+import Team from "./components/About/Team";
 
 
-// This component represents the header section of the app
-function Header() {
+// This componennt represents the header section of the app
+export function Header() {
   return (
     <div className="header-div">
       <h1 className="header">K's Kuisine</h1> {/* Displaying the app name */}
-      <h2>Welcome!</h2> {/* Displaying a welcome message */}
     </div>
   );
 }
@@ -15,17 +28,31 @@ function Header() {
 
 
 // This component represents the recipe board section of the app
-function RecipeBoard({ recipes }) {
+export function RecipeBoard({ recipes }) {
   return (
+    /*
     <div className="recipe-board">
       <div className="image-container">
-        {/* Displaying the first 4 recipe images */}
+        {/* Displaying the first 4 recipe images }
         {recipes.slice(0, 4).map((recipe, index) => (
           <div key={index}>
             <img src={recipe.image} alt={recipe.name} />
           </div>
         ))}
       </div>
+    </div>
+    */
+    <div className="recipe-board-col">
+      {recipes.map((recipe, index) => (
+        <div key={index} className="recipe-summary">
+          <img src={recipe.image} alt={recipe.name} className="image-container" />
+          <div className="recipe-description">
+            <h2>{recipe.name}</h2>
+            <p>{recipe.description}</p>
+            <button onClick={() => window.location.href = recipe.link}>Go to Recipe</button>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
@@ -34,7 +61,7 @@ function RecipeBoard({ recipes }) {
  * Renders the heading for today's top recipes.
  * @returns {JSX.Element} The heading element.
  */
-function TopRecipes() {
+export function TopRecipes() {
   return <h2 className="top-recipes">Today's Top Recipes</h2>;
 }
 
@@ -45,7 +72,7 @@ function TopRecipes() {
  * @param {Object} props.recipe - The recipe object containing name, image, description, ingredients, and instructions.
  * @returns {JSX.Element} The recipe component.
  */
-function Recipe({ recipe }) {
+export function Recipe({ recipe }) {
   const [showDetails, setShowDetails] = useState(false);
 
   return (
@@ -73,21 +100,6 @@ function Recipe({ recipe }) {
   );
 }
 
-/**
- * Renders a list of recipes.
- *
- * @param {Object[]} recipes - An array of recipe objects.
- * @returns {JSX.Element} The rendered recipe list component.
- */
-function RecipeList({ recipes }) {
-  return (
-    <div className="recipe-list">
-      {recipes.map((recipe, index) => (
-        <Recipe key={index} recipe={recipe} />
-      ))}
-    </div>
-  );
-}
 
 /**
  * Represents the actual recipes and their components.
@@ -125,7 +137,8 @@ function App() {
       "Pour your batter into the waffle iron and cook.",
       "Once your waffle is ready, top it with your fresh strawberries, favorite syrup, and a dose of powdered sugar. Enjoy!" ],
 
-      image: "https://stordfkenticomedia.blob.core.windows.net/df-us/rms/media/recipemediafiles/recipes/retail/x17/2020_belgian-style-waffles_16700_600x600.jpg?ext=.jpg"
+      image: "https://stordfkenticomedia.blob.core.windows.net/df-us/rms/media/recipemediafiles/recipes/retail/x17/2020_belgian-style-waffles_16700_600x600.jpg?ext=.jpg",
+      link: "/Waffles"
     },
     {
       name: "Blueberry-Banana Smoothie",
@@ -144,7 +157,8 @@ function App() {
         "Add your ice, yogurt, and bananas to the blender, and blend until just combined.",
         "Add the blueberries, raspberries, strawberries, chia seeds, and honey, and blend until smooth. Enjoy!"
       ],
-      image: "https://lilluna.com/wp-content/uploads/2014/02/fruit-smoothie-resize-14.jpg"
+      image: "https://lilluna.com/wp-content/uploads/2014/02/fruit-smoothie-resize-14.jpg",
+      link: "/Smoothie"
     },
     {
       name: "Hawaiian Haystacks",
@@ -167,7 +181,8 @@ function App() {
         "Allow to cook for 20 minutes, at the halfway point, briefly lift the lid, add in your pineapple, and give it a quick stir.",
         "Once done cooking, remove from the heat and serve. Enjoy!"]
         ,
-      image: "https://www.yellowblissroad.com/wp-content/uploads/2014/06/One-Pan-Pineapple-Chicken-and-Rice-11.jpg"
+      image: "https://www.yellowblissroad.com/wp-content/uploads/2014/06/One-Pan-Pineapple-Chicken-and-Rice-11.jpg",
+      link: "/Hawaii"
     },
     {
       name: "The Best Grilled Cheese",
@@ -188,7 +203,8 @@ function App() {
         "Once golden throughout, remove from heat, slice, and enjoy!"
         
       ],
-      image: "https://natashaskitchen.com/wp-content/uploads/2021/08/Grilled-Cheese-Sandwich-3.jpg"
+      image: "https://natashaskitchen.com/wp-content/uploads/2021/08/Grilled-Cheese-Sandwich-3.jpg",
+      link: "/GrilledCheese"
     },
     {
       name: "Chicken Alfredo",
@@ -218,7 +234,8 @@ function App() {
       "Add to your pan the minced garlic, and the rest of your spices and stir until well combined.",
       "Stir in the parmesan cheese, adding a tablespoon of pasta water as need be to keep the sauce thin.",
       "Remove the sauce from the heat and immediately toss the sauce with the fettuccine in the skillet, before plating the pasta and topping with some of the sliced chicken, enjoy!"],
-      image: "https://bellyfull.net/wp-content/uploads/2021/02/Chicken-Alfredo-blog-4.jpg"
+      image: "https://bellyfull.net/wp-content/uploads/2021/02/Chicken-Alfredo-blog-4.jpg",
+      link: "/Alfredo"
     },
     {
       name: "Snickerdoodles",
@@ -234,7 +251,6 @@ function App() {
         "½ Teaspoon of Baking Soda",
         "1 Teaspoon of Salt",
         "2 ½ Teaspoons of Cinnamon"
-        
       ],
       instructions: ["Preheat your oven to 350 F, and line a baking sheet with parchment paper.",
         "In a large mixing bowl, stir together the butter (softened) with 1 cup of your sugar and all of your brown sugar until light and fluffy, about 5 minutes.",
@@ -243,7 +259,8 @@ function App() {
         "In a separate bowl, mix together the remaining ¼ cup of sugar with the cinnamon.",
         "Make your dough into golf ball sized globs, and one by one thoroughly roll them in the cinnamon sugar mixture before placing them on the baking sheet, gently pressing on them until they resemble more of a hockey puck.",
         "Sprinkle the tops of them with any remaining cinnamon-sugar mixture and bake for 10 - 11 minutes. Enjoy! (Let cool completely before removing from pan, or you risk your cookies falling apart)"],
-      image: "https://www.modernhoney.com/wp-content/uploads/2018/12/The-Best-Snickerdoodle-Cookie-Recipe-9jpg-1200x975.jpg"
+      image: "https://www.modernhoney.com/wp-content/uploads/2018/12/The-Best-Snickerdoodle-Cookie-Recipe-9jpg-1200x975.jpg",
+      link: "/Snickerdoodles"
     },
     {
       name: "Raspberry Soufflé",
@@ -256,7 +273,6 @@ function App() {
         "4 Large Eggs, Separated",
         "1 Tablespoon Unsalted Butter",
         "1 Lemon"
-        
       ],
       instructions: ["Preheat the oven to 400 F and grease your ramekins with butter.",
       "In a medium saucepan, combine 1 cup of raspberries with ¼ cup of sugar and heat on low, stirring frequently, until the sugar is dissolved.",
@@ -265,21 +281,43 @@ function App() {
       "In a separate bowl, gently whisk together the egg whites until peaks form, at which point gently fold the egg whites into the mixture, a third at a time.",
       "Gently pour your mixture into the buttered ramekins, being sure not to fill them past the brim, and bake for 15 minutes.",
       "Remove from the oven, garnish with the remaining raspberries, and enjoy!"],
-      image: "https://www.abeautifulplate.com/wp-content/uploads/2014/06/raspberry-souffle-1-3.jpg"
+      image: "https://www.abeautifulplate.com/wp-content/uploads/2014/06/raspberry-souffle-1-3.jpg",
+      link: "/Souffle"
     },
   ];
 
   return (
     <div>
+      <Router>
+            <Navbar />
+            <Routes>
+                <Route path="/" exact element={
+                  <>
+                    <TopRecipes />
+                    <RecipeBoard recipes={recipes} />
+                  </>
+                } />
+                <Route path="/Alfredo" element={<Alfredo />} />
+                <Route
+                    path="/GrilledCheese"
+                    element={<GrilledCheese />}
+                />
+                <Route
+                    path="/Hawaii"
+                    element={<Hawaii />}
+                />
+                <Route path="/Smoothie" element={<Smoothie />} />
+                <Route path="/Souffle" element={<Souffle />} />
+                <Route path="/Snickerdoodles" element={<Snickerdoodles />} />
+                <Route path="/Waffles" element={<Waffles />} />
+                <Route path="/About" element={<Team />} />
+            </Routes>
+        </Router>
       <Header />
-      <RecipeBoard recipes={recipes} />
-      <TopRecipes />
-      <RecipeList recipes={recipes} />
+
+      
     </div>
   );
 }
-
-
-
 
 export default App;
