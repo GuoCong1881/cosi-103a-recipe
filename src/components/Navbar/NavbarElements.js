@@ -29,7 +29,7 @@ export const NavLink = styled(Link)`
  
 export const Bars = styled(FaBars)`
     display: none;
-    color: #808080;
+    color: rgb(252, 206, 160);
     @media screen and (max-width: 768px) {
         display: block;
         position: absolute;
@@ -42,6 +42,7 @@ export const Bars = styled(FaBars)`
 `;
  
 export const NavMenu = styled.div`
+    background: rgb(252, 206, 160);
     display: flex;
     align-items: center;
     margin-right: -24px;
