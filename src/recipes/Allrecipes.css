@@ -41,6 +41,7 @@ body {
         font-size: 24px;
         margin-bottom: 20px;
         margin: 0 auto;
+        width: 80%; /* Add this line to set the width of the element */
     }
 }
 
@@ -60,9 +61,15 @@ h2 {
 }
 
 /* styling for instructions list */
+.recipe-list {
+    font-size: 16px; /* Change the value to your desired font size */
+    text-align:justify;
+    margin-left: calc(50% - 300px);
+    margin-right: calc(50% - 300px);
+}
+
 .recipe-list ol {
     list-style-type: decimal;
     margin-left: 20px;
     text-align: left;
-    padding-left: 0; /* Add this line to remove the default padding */
 }
