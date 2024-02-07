@@ -16,29 +16,34 @@ body {
     padding-top: 40px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    .recipe-image {
-        width: 400px; 
-        height: 400px; 
-        object-fit: cover;
+    .recipe-top {
         display: flex;
-        justify-content: flex-start; /* Align to the left */
-        align-items: flex-start;
+        flex-wrap: wrap;
     }
-    .recipe-vitals{
-        /* Styles for img elements */
-        /* Styling for the title */
-        .recipe-title {
-            font-size: 24px;
-            margin-bottom: 24px;
-        }
-        /* Styling for the description */
-        .recipe-description{ 
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
+
+    .recipe-image {
+        width: calc(33.33% - 20px);
+        height: 400px;
+        object-fit: cover;
+        margin-right: 20px;
+    }
+
+    .recipe-vitals {
+        flex-grow: 1;
+    }
+
+    .recipe-vitals .recipe-title {
+        font-size: 36px;
+        margin-bottom: 28px;
+    }
+
+    .recipe-vitals .recipe-description {
+        font-size: 24px;
+        margin-bottom: 20px;
+        margin: 0 auto;
     }
 }
+
 
 /* Styling for h2 elements, which includes description, instruction, and ingreidents headers */
 h2 {
@@ -59,4 +64,5 @@ h2 {
     list-style-type: decimal;
     margin-left: 20px;
     text-align: left;
+    padding-left: 0; /* Add this line to remove the default padding */
 }

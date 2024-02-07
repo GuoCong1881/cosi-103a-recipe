@@ -28,15 +28,15 @@ const Waffles = () => {
             </ul>
             <h2 className="recipe-heading">Instructions</h2>
             <ol className="recipe-list">
-                <li>Step 1: Preheat your waffle iron, spray with non-stick cooking spray, and set aside for later.</li>
-                <li>Step 2: Wash your strawberries, cut off the tops, and slice them vertically from top to bottom.</li>
-                <li>Step 3: In a large bowl, whisk together your flour, baking powder, sugar, salt, and cinnamon.</li>
-                <li>Step 4: In a separate bowl, beat the egg whites until stiff peaks form.</li>
-                <li>Step 5: In a third bowl, mix together the egg yolks, vegetable oil, milk, and vanilla extract.</li>
-                <li>Step 6: Stir the egg yolk mixture into the dry ingredients.</li>
-                <li>Step 7: Fold the egg whites into your batter.</li>
-                <li>Step 8: Pour your batter into the waffle iron and cook.</li>
-                <li>Step 9: Once your waffle is ready, top it with your fresh strawberries, favorite syrup, and a dose of powdered sugar. Enjoy!</li>
+                <li>Preheat your waffle iron, spray with non-stick cooking spray, and set aside for later.</li>
+                <li>Wash your strawberries, cut off the tops, and slice them vertically from top to bottom.</li>
+                <li>In a large bowl, whisk together your flour, baking powder, sugar, salt, and cinnamon.</li>
+                <li>In a separate bowl, beat the egg whites until stiff peaks form.</li>
+                <li>In a third bowl, mix together the egg yolks, vegetable oil, milk, and vanilla extract.</li>
+                <li>Stir the egg yolk mixture into the dry ingredients.</li>
+                <li>Fold the egg whites into your batter.</li>
+                <li>Pour your batter into the waffle iron and cook.</li>
+                <li>Once your waffle is ready, top it with your fresh strawberries, favorite syrup, and a dose of powdered sugar. Enjoy!</li>
             </ol>
         </div>
     );
