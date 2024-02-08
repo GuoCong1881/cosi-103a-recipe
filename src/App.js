@@ -13,7 +13,10 @@ import Waffles from "./recipes/Waffles";
 import Smoothie from "./recipes/Smoothie";
 import Hawaii from "./recipes/Hawaii";
 import Souffle from "./recipes/Souffle";
+import RecipePage from "./recipes/recipe";
 import Team from "./components/About/Team";
+import Grocery from "./Grocery";
+
 
 
 // This componennt represents the header section of the app
@@ -235,7 +238,7 @@ function App() {
       "Stir in the parmesan cheese, adding a tablespoon of pasta water as need be to keep the sauce thin.",
       "Remove the sauce from the heat and immediately toss the sauce with the fettuccine in the skillet, before plating the pasta and topping with some of the sliced chicken, enjoy!"],
       image: "https://bellyfull.net/wp-content/uploads/2021/02/Chicken-Alfredo-blog-4.jpg",
-      link: "/Alfredo"
+      link: "/Alfredoooooo"
     },
     {
       name: "Snickerdoodles",
@@ -297,21 +300,12 @@ function App() {
                     <RecipeBoard recipes={recipes} />
                   </>
                 } />
-                <Route path="/Alfredo" element={<Alfredo />} />
-                <Route
-                    path="/GrilledCheese"
-                    element={<GrilledCheese />}
-                />
-                <Route
-                    path="/Hawaii"
-                    element={<Hawaii />}
-                />
-                <Route path="/Smoothie" element={<Smoothie />} />
-                <Route path="/Souffle" element={<Souffle />} />
-                <Route path="/Snickerdoodles" element={<Snickerdoodles />} />
-                <Route path="/Waffles" element={<Waffles />} />
+                <Route path="/Groceries" element={<Grocery />} />
+                {recipes.map((recipe, index) => (
+                  <Route key={index} path={`/${recipe.link}`} element={<RecipePage recipe={recipe} />} />
+                ))}
                 <Route path="/About" element={<Team />} />
-            </Routes>
+              </Routes>
         </Router>
       <Header />
 
