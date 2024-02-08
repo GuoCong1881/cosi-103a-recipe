@@ -15,7 +15,7 @@ import Hawaii from "./recipes/Hawaii";
 import Souffle from "./recipes/Souffle";
 import RecipePage from "./recipes/recipe";
 import Team from "./components/About/Team";
-import Grocery from "./Grocery";
+import GroceryList from "./Grocery";
 
 
 
@@ -109,6 +109,10 @@ export function Recipe({ recipe }) {
  * @returns {JSX.Element} The JSX element representing the App component.
  */
 function App() {
+  const [groceryList, setGroceryList] = useState([]);
+  const addToGroceryList = (item) => {
+    setGroceryList([...groceryList, item]);
+  };
   const recipes = [
     //This code right here is for the recipe board. You can change the images, instructions,
     //and ingredients in this section here. It is the blueprint for all recipes we have.
@@ -300,9 +304,9 @@ function App() {
                     <RecipeBoard recipes={recipes} />
                   </>
                 } />
-                <Route path="/Groceries" element={<Grocery />} />
+                <Route path="/Groceries" element={<GroceryList groceryList={groceryList}/>} />
                 {recipes.map((recipe, index) => (
-                  <Route key={index} path={`/${recipe.link}`} element={<RecipePage recipe={recipe} />} />
+                  <Route key={index} path={`/${recipe.link}`} element={<RecipePage recipe={recipe} addToGroceryList={addToGroceryList} />} />
                 ))}
                 <Route path="/About" element={<Team />} />
               </Routes>
