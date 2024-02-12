@@ -6,13 +6,6 @@ import {
     Routes,
     Route
 } from "react-router-dom";
-import Alfredo from "./recipes/Alfredo";
-import GrilledCheese from "./recipes/GrilledCheese";
-import Snickerdoodles from "./recipes/Snickerdoodles";
-import Waffles from "./recipes/Waffles";
-import Smoothie from "./recipes/Smoothie";
-import Hawaii from "./recipes/Hawaii";
-import Souffle from "./recipes/Souffle";
 import RecipePage from "./recipes/recipe";
 import Team from "./components/About/Team";
 import GroceryList from "./Grocery";
