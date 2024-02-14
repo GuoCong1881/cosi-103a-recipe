@@ -9,6 +9,10 @@ const RecipePage = ({ recipe, addToGroceryList }) => {
         setShowBox(!showBox);
     };
 
+    const handleHideBox = () => {
+        setShowBox(false);
+    };
+
     return (
         <div className="recipe">
             <div className="recipe-top">
@@ -34,10 +38,11 @@ const RecipePage = ({ recipe, addToGroceryList }) => {
                 ))}
             </ol>
             <div className="centered-button">
-                <button onClick={handleClick}>Moble Friendly Instructions</button>
+                <button onClick={handleClick}>Mobile Friendly Instructions</button>
                 {showBox && (
                     <div className="box overlay">
-                        <h2 className="recipe-heading">Instructions</h2>
+                        <button className="hide-box-button" onClick={handleHideBox}>Hide Instructions</button>
+                        <button className="hide-box-button-2" onClick={handleHideBox}>Hide Instructions</button>
                         <ControlledCarousel instructions={recipe.instructions} />
                     </div>
                 )}
@@ -54,10 +59,10 @@ function ControlledCarousel({ instructions }) {
     };
 
     return (
-        <Carousel activeIndex={index} onSelect={handleSelect}>
-            {instructions.map((instruction, index) => (
-                <Carousel.Item key={index}>
-                    <p>{instruction}</p>
+        <Carousel activeIndex={index} onSelect={handleSelect} controls={false} indicators={false}>
+            {instructions.map((instruction, idx) => (
+                <Carousel.Item key={idx}>
+                    <p style={{ fontSize: '500%' }}>{instruction}</p>
                 </Carousel.Item>
             ))}
         </Carousel>
