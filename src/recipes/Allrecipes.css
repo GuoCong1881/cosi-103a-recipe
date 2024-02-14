@@ -3,7 +3,8 @@ body {
     font-family: Tahoma, sans-serif;
     background-color: rgb(252, 206, 160);
     text-align: center;
-  }
+    position: relative; /* Add this line to make the body element a positioning context */
+}
 
 /* Styles for the top header of the recipe section (image, name, description) */
 .recipe-top {
@@ -45,7 +46,6 @@ body {
     }
 }
 
-
 /* Styling for h2 elements, which includes description, instruction, and ingreidents headers */
 h2 {
     font-size: 18px;
@@ -67,3 +67,5 @@ h2 {
     margin-left: calc(50% - 300px);
     margin-right: calc(50% - 300px);
 }
+
+

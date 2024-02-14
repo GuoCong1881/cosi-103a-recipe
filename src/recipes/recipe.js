@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Carousel from 'react-bootstrap/Carousel';
 import './Allrecipes.css';
 
 const RecipePage = ({ recipe, addToGroceryList }) => {
+    const [showBox, setShowBox] = useState(false);
+
+    const handleClick = () => {
+        setShowBox(!showBox);
+    };
+
     return (
         <div className="recipe">
             <div className="recipe-top">
@@ -26,8 +33,35 @@ const RecipePage = ({ recipe, addToGroceryList }) => {
                     <li key={index}>{instruction}</li>
                 ))}
             </ol>
+            <div className="centered-button">
+                <button onClick={handleClick}>Moble Friendly Instructions</button>
+                {showBox && (
+                    <div className="box overlay">
+                        <h2 className="recipe-heading">Instructions</h2>
+                        <ControlledCarousel instructions={recipe.instructions} />
+                    </div>
+                )}
+            </div>
         </div>
     );
 };
+
+function ControlledCarousel({ instructions }) {
+    const [index, setIndex] = useState(0);
+
+    const handleSelect = (selectedIndex) => {
+        setIndex(selectedIndex);
+    };
+
+    return (
+        <Carousel activeIndex={index} onSelect={handleSelect}>
+            {instructions.map((instruction, index) => (
+                <Carousel.Item key={index}>
+                    <p>{instruction}</p>
+                </Carousel.Item>
+            ))}
+        </Carousel>
+    );
+}
 
 export default RecipePage;
