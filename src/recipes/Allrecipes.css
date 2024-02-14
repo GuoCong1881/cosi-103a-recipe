@@ -72,6 +72,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: flex-start; /* Add this line to align the button to the top within its box */
+    height: 75px;
     margin-top: 5px; /* Adjust the value to move the button higher */
 }
 
@@ -95,13 +96,13 @@ h2 {
     justify-content: center;
     z-index: 999;
     .hidden {
-        visibility: hidden;
+        visibility: visible;
     }
 
 .hide-box-button {
     position: absolute;
     position: fixed;
-    top: 0;
+    top: 25px;
     background-color: rgba(255, 255, 255, 0.8);
     color: black;
     padding: 25px 50px;

@@ -20,6 +20,9 @@ const RecipePage = ({ recipe, addToGroceryList }) => {
                 <div className="recipe-vitals">
                     <h1 className="recipe-title">{recipe.name}</h1>
                     <p className="recipe-description">{recipe.description}</p>
+                    <button onClick={() => {
+                   /* Needs functionality */
+                    }}>Add All Ingredients to Grocery List</button>
                 </div>
             </div>
             <h2 className="recipe-heading">Ingredients</h2>
@@ -27,7 +30,7 @@ const RecipePage = ({ recipe, addToGroceryList }) => {
                 {recipe.ingredients.map((ingredient, index) => (
                     <li key={index}>
                         {ingredient}
-                        <button onClick={() => addToGroceryList(ingredient)}>Add to Grocery List</button>
+                        <button onClick={() => addToGroceryList(ingredient)}>Add to Grocery List</button>                     
                     </li>
                 ))}
             </ul>
@@ -38,10 +41,10 @@ const RecipePage = ({ recipe, addToGroceryList }) => {
                 ))}
             </ol>
             <div className="centered-button">
-                <button onClick={handleClick}>Cooking Mode</button>
+                <button onClick={handleClick}>Enter Cooking Mode</button>
                 {showBox && (
                     <div className="box overlay">
-                        <button className="hide-box-button" onClick={handleHideBox}>Hide Instructions</button>
+                        <button className="hide-box-button" onClick={handleHideBox}>Exit Cooking Mode</button>
                         <ControlledCarousel instructions={recipe.instructions} />
                     </div>
                 )}
@@ -61,7 +64,7 @@ function ControlledCarousel({ instructions }) {
         <Carousel activeIndex={index} onSelect={handleSelect} controls={false} indicators={false}>
             {instructions.map((instruction, idx) => (
                 <Carousel.Item key={idx}>
-                    <p style={{ fontSize: '500%', margin: '0px' }}>{instruction}</p>
+                    <p style={{ fontSize: '250%', margin: '-5px' }}>{instruction}</p>
                 </Carousel.Item>
             ))}
         </Carousel>
