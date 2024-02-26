@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Carousel from 'react-bootstrap/Carousel';
 import './Allrecipes.css';
 
 const RecipePage = ({ recipe, addToGroceryList }) => {
+    const [showBox, setShowBox] = useState(false);
+
+    const handleClick = () => {
+        setShowBox(!showBox);
+    };
+
+    const handleHideBox = () => {
+        setShowBox(false);
+    };
+
     return (
         <div className="recipe">
             <div className="recipe-top">
@@ -9,6 +20,9 @@ const RecipePage = ({ recipe, addToGroceryList }) => {
                 <div className="recipe-vitals">
                     <h1 className="recipe-title">{recipe.name}</h1>
                     <p className="recipe-description">{recipe.description}</p>
+                    <button onClick={() => {
+                   /* Needs functionality */
+                    }}>Add All Ingredients to Grocery List</button>
                 </div>
             </div>
             <h2 className="recipe-heading">Ingredients</h2>
@@ -16,7 +30,7 @@ const RecipePage = ({ recipe, addToGroceryList }) => {
                 {recipe.ingredients.map((ingredient, index) => (
                     <li key={index}>
                         {ingredient}
-                        <button onClick={() => addToGroceryList(ingredient)}>Add to Grocery List</button>
+                        <button onClick={() => addToGroceryList(ingredient)}>Add to Grocery List</button>                     
                     </li>
                 ))}
             </ul>
@@ -26,8 +40,35 @@ const RecipePage = ({ recipe, addToGroceryList }) => {
                     <li key={index}>{instruction}</li>
                 ))}
             </ol>
+            <div className="centered-button">
+                <button onClick={handleClick}>Enter Cooking Mode</button>
+                {showBox && (
+                    <div className="box overlay">
+                        <button className="hide-box-button" onClick={handleHideBox}>Exit Cooking Mode</button>
+                        <ControlledCarousel instructions={recipe.instructions} />
+                    </div>
+                )}
+            </div>
         </div>
     );
 };
+
+function ControlledCarousel({ instructions }) {
+    const [index, setIndex] = useState(0);
+
+    const handleSelect = (selectedIndex) => {
+        setIndex(selectedIndex);
+    };
+
+    return (
+        <Carousel activeIndex={index} onSelect={handleSelect} controls={false} indicators={false}>
+            {instructions.map((instruction, idx) => (
+                <Carousel.Item key={idx}>
+                    <p style={{ fontSize: '250%', margin: '-5px' }}>{instruction}</p>
+                </Carousel.Item>
+            ))}
+        </Carousel>
+    );
+}
 
 export default RecipePage;
