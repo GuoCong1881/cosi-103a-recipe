@@ -104,7 +104,7 @@ export function Recipe({ recipe }) {
 function App() {
   const [groceryList, setGroceryList] = useState([]);
   const addToGroceryList = (item) => {
-    setGroceryList([...groceryList, item]);
+    setGroceryList(groceryList => [...groceryList, item]);
   };
   const recipes = [
     //This code right here is for the recipe board. You can change the images, instructions,
