@@ -1,4 +1,7 @@
 name: Azure Container Apps Deploy
+permissions:
+  id-token: write
+  contents: read
 
 on:
   push:
@@ -7,7 +10,9 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    name: Deploy Infra
+    runs-on: windows-latest
+    environment: prd
 
     steps:
       - uses: actions/checkout@v3
@@ -15,7 +20,9 @@ jobs:
       - name: Log in to Azure
         uses: azure/login@v1
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       - name: Build and deploy Container App
         uses: azure/container-apps-deploy-action@v1
