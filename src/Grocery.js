@@ -14,14 +14,18 @@ const GroceryList = ({ groceryList }) => {
         <div className="container">
             <h1>Your Grocery List</h1> 
             <button onClick={clearList}>Clear List</button>
-            {list.map((item) => (
-                <tr className="item" key={item}>   
-                    <td>{item}</td>
-                    <td>
-                        <button onClick={() => removeItem(item)}>Remove</button>
-                    </td>
-                </tr>
-            ))}
+            <table>
+            <tbody>
+                {list.map((item) => (
+                    <tr className="item" key={item} data-testid="grocery-item">
+                        <td>{item}</td>
+                        <td>
+                            <button onClick={() => removeItem(item)}>Remove</button>
+                        </td>
+                    </tr>
+                ))}
+            </tbody>
+        </table>
         </div>
     );
 };
