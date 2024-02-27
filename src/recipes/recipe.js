@@ -21,7 +21,7 @@ const RecipePage = ({ recipe, addToGroceryList }) => {
                     <h1 className="recipe-title">{recipe.name}</h1>
                     <p className="recipe-description">{recipe.description}</p>
                     <button onClick={() => {
-                   /* Needs functionality */
+                        recipe.ingredients.forEach((ingredient) => addToGroceryList(ingredient));
                     }}>Add All Ingredients to Grocery List</button>
                 </div>
             </div>
