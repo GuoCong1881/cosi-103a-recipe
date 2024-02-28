@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import RecipePage from '/workspaces/cosi-103a/src/recipes/recipe.js'; 
+import RecipePage from './recipe.js'; 
 
 describe('RecipePage', () => {
   const mockAddToGroceryList = jest.fn();
