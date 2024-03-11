@@ -9,6 +9,7 @@ import {
 import RecipePage from "./recipes/recipe";
 import Team from "./components/About/Team";
 import GroceryList from "./Grocery";
+import RecipeList from '/workspaces/cosi-103a/src/components/RecipeList/RecipeList.js';
 
 
 
@@ -302,6 +303,7 @@ function App() {
                   <Route key={index} path={`/${recipe.link}`} element={<RecipePage recipe={recipe} addToGroceryList={addToGroceryList} />} />
                 ))}
                 <Route path="/About" element={<Team />} />
+                <Route path="/all-recipes" element={<RecipeList />} />
               </Routes>
         </Router>
       <Header />
