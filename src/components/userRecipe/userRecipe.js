@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 function UserRecipe() {
     const [recipe, setRecipe] = useState('');
     const [recipeQueue, setRecipeQueue] = useState([]);
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleRecipeChange = (event) => {
         setRecipe(event.target.value);
@@ -13,8 +14,9 @@ function UserRecipe() {
             const parsedRecipe = JSON.parse(recipe);
             setRecipeQueue((prevQueue) => [...prevQueue, parsedRecipe]);
             console.log(parsedRecipe);
+            setErrorMessage('');
         } catch (error) {
-            console.error('Invalid JSON format');
+            setErrorMessage('Invalid JSON format');
         }
     };
 
@@ -26,6 +28,8 @@ function UserRecipe() {
                 placeholder="Enter raw JSON for recipe"
             />
             <button onClick={handleAddRecipe}>Add Recipe</button>
+
+            {errorMessage && <p>{errorMessage}</p>}
 
             <h2>Recipe Queue:</h2>
             <ul>
