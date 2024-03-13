@@ -88,7 +88,7 @@ test('renders App and checks routing', () => {
   expect(screen.getByText('Belgian Waffles', { container: headings[1] })).toBeInTheDocument();
 
   const links = screen.getAllByRole('link');
-  expect(links).toHaveLength(3);
+  expect(links).toHaveLength(4);
   expect(screen.getByText('Home', { container: links[0] })).toBeInTheDocument();
   expect(screen.getByText('About', { container: links[1] })).toBeInTheDocument();
   // Check that the first team member's details are correct
