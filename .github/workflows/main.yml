@@ -25,7 +25,7 @@ jobs:
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       - name: Log GitHub Workspace
-        run: echo "GitHub Workspace: $GITHUB_WORKSPACE"
+        run: echo $GITHUB_WORKSPACE
         
       - name: Build and deploy Container App
         uses: azure/container-apps-deploy-action@v1
