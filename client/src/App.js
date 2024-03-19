@@ -17,7 +17,7 @@ import RecipeList from './components/RecipeList/RecipeList.js';
 export function Header() {
   return (
     <div className="header-div">
-      <h1 className="header">K's Kuisine</h1> {/* Displaying the app name */}
+      <h1 className="header">K's Kuisine Azure Test</h1> {/* Displaying the app name */}
     </div>
   );
 }
