@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import './App.css';
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/Navbar/Navbar.js";
 import {
     BrowserRouter as Router,
     Routes,
     Route
 } from "react-router-dom";
-import RecipePage from "./recipes/recipe";
-import Team from "./components/About/Team";
-import GroceryList from "./Grocery";
+import RecipePage from "./recipes/recipe.js";
+import Team from "./components/About/Team.js";
+import GroceryList from "./Grocery.js";
 import RecipeList from './components/RecipeList/RecipeList.js';
 
 
