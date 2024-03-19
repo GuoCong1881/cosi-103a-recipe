@@ -1,3 +1,4 @@
+name: Run Automated Unit Tests
 on:
   push:
     branches:
