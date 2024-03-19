@@ -6,7 +6,7 @@ permissions:
 on:
   push:
     branches:
-      - main
+      - sprint-6-irene
 
 jobs:
   build:
@@ -28,6 +28,6 @@ jobs:
         uses: azure/container-apps-deploy-action@v1
         with:
           appSourcePath: ${{ github.workspace }}/src
-          acrName: krecipe
-          containerAppName: krecipe
-          resourceGroup: krecipe
+          acrName: kreciperegistry
+          containerAppName: krecipe-container-app
+          resourceGroup: krecipe-resource-group
