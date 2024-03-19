@@ -6,9 +6,9 @@ import {
     Routes,
     Route
 } from "react-router-dom";
-import RecipePage from "./recipes/recipe.js";
+import RecipePage from "./components/recipes/recipe.js";
 import Team from "./components/About/Team.js";
-import GroceryList from "./Grocery.js";
+import GroceryList from "./components/Grocery/Grocery.js";
 import RecipeList from './components/RecipeList/RecipeList.js';
 
 
