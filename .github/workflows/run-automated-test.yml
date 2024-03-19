@@ -16,10 +16,10 @@ jobs:
       with:
         node-version: '20'
       
-    - name: Install dependencies
-      run:
+    - name: Install dependencies and test client
+      run: |
         npm ci
-
-    - name: Run tests
-      run: 
         npm test
+      working-directory: client
+
+
