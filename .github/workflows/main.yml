@@ -34,4 +34,3 @@ jobs:
           acrName: kreciperegistry
           containerAppName: krecipe-container-app
           resourceGroup: krecipe-resource-group
-          buildpacksToInstall: mcr.microsoft.com/oryx/node-buildpack:20230321.1
