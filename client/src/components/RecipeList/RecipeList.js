@@ -1,26 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import RecipeForm from './RecipeForm';
 
-function RecipeList() {
-  const [message, setMessage] = useState('');
+const RecipeList = () => {
+  const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/test')
-      .then(response => {
-        setMessage(response.data.message);
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-        setMessage('Error connecting to the backend');
-      });
+    const fetchRecipes = async () => {
+      const { data } = await axios.get('/api/recipes');
+      console.log('Response data:', data); 
+      setRecipes(data);
+    };
+    fetchRecipes();
   }, []);
 
   return (
     <div>
-      <h1>Test Connection</h1>
-      <p>{message}</p>
+      <h1>All Recipes</h1>
+      <RecipeForm setRecipes={setRecipes} />
+      <ul>
+        {recipes.map((recipe, index) => (
+          <li key={index}>{recipe.name}</li>
+        ))}
+      </ul>
     </div>
   );
-}
+};
 
 export default RecipeList;

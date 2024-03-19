@@ -12,7 +12,6 @@ import GroceryList from "./components/Grocery/Grocery.js";
 import RecipeList from './components/RecipeList/RecipeList.js';
 
 
-
 // This componennt represents the header section of the app
 export function Header() {
   return (
