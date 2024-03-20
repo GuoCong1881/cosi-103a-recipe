@@ -30,7 +30,30 @@ const RecipePage = ({ recipe, addToGroceryList }) => {
                 {recipe.ingredients.map((ingredient, index) => (
                     <li key={index}>
                         {ingredient}
-                        <button onClick={() => addToGroceryList(ingredient)}>Add to Grocery List</button>                     
+                        <button onClick={() => {
+                            const excludedWords = ['cup', 'teaspoon', 'tablespoon', 'pinch', 'pint', 'quart', 'liter', 'bottle', 'of', 'the', 'and', 'fres'];
+                            const realingredient = ingredient.replace(/[0-9]|(\b(?:cup|teaspoon|tablespoon|pinch|pint|quart|liter|bottle|of|the|and|fresh)s?\b)|(\d+\/\d+)\b/gi, '').trim();
+                            const query = encodeURIComponent(realingredient.replace(/\s+/g, ' '));
+                            const dataType = ['Foundation', 'SR Legacy']; // Specify the data type here
+                            const url = `https://api.nal.usda.gov/fdc/v1/foods/search?query=${query}&dataType=${dataType}&sortBy=dataType.keyword&api_key=e17VMPLILvgWKT2kIWEJCdi5RZF3Sv7obN7dQfc5`;
+                            fetch(url)
+                                .then(response => response.json())
+                                .then(data => {
+                                    // Handle the API response data here
+                                    console.log(data); // Display the entire API response data
+                                    const firstFdcId = data.foods[0].fdcId; // Find the first fdcId number and store it
+                                    console.log(`First fdcId: ${firstFdcId}`);
+                                    // Make a second API call using the firstFdcId as an input parameter
+                                    const url = `https://fdc.nal.usda.gov/fdc-app.html#/food-details/${firstFdcId}/nutrients`;
+                                    console.log(url);
+                                    window.open(url, '_blank'); // Open the URL in a new tab
+                                })
+                                .catch(error => {
+                                    // Handle any errors that occur during the API request
+                                    console.error(error);
+                                });
+                        }}>See Nutrition Info</button>
+                        <button onClick={() => addToGroceryList(ingredient)}>Add to Grocery List</button>
                     </li>
                 ))}
             </ul>
