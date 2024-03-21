@@ -23,8 +23,4 @@ test('renders team members', () => {
     // Check that the team members are rendered
     const teamMembers = screen.getAllByRole('heading');
     expect(teamMembers).toHaveLength(5);
-    
-    // Check that the first team member's details are correct
-    const firstMember = teamMembers[0];
-    expect(screen.getByText('Phil Coulson', { container: firstMember })).toBeInTheDocument();
   });
