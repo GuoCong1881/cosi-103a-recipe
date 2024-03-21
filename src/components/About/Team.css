@@ -4,8 +4,23 @@
     overflow-wrap: break-word; /* This will prevent the text from overflowing */
   }
 
-.team-container {
-display: flex;
-flex-wrap: wrap;
-justify-content: space-between;
+  .team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  img {
+    width: 200px; /* Adjust this value as needed */
+    height: 200px; /* Adjust this value as needed */
+    object-fit: cover;
+    object-position: top; /* Set the top of the image as the focal point */
+  }
+
+h5 {
+  text-align: center;
+  margin: 0px 0;
+  font-size: 24px;
+  background-color:  rgb(251, 187, 124); /* Add this line to create a black background */
+  color: white; /* Add this line to set the text color to white */
+  padding: 50px; /* Add this line to add some padding around the text */
 }
