@@ -7,37 +7,44 @@ export const TeamMember = ({ member }) => {
         <h2>{member.name}</h2>
         <p>{member.position}</p>
         <img src={member.image} alt={member.name} />
+        <p>Favorite Food: {member.favFood}</p>
       </div>
     );
   };
 
 const Team = () => {
+    const welcomeMessage = ["Welcome to K's Kuisine! We are a team of four students passionate about food and technology. We are here to help you find the best recipes and ingredients for your next meal. We are excited to help you on your culinary journey! ", "Meet the team below:"]
     const teamMembers = [
         {
-            name: 'Phil Coulson',
-            position: 'Director of S.H.I.E.L.D.',
-            image: 'https://pyxis.nymag.com/v1/imgs/c9e/349/c6dab6c01428485c3f89e0a377a24a7af6-26-clark-gregg-shield.2x.h473.w710.jpg',
+            name: 'Irene',
+            position: 'Chief Executive Officer & Navigation Guru',
+            image: 'https://cdn.vectorstock.com/i/500p/80/18/cartoon-happy-successful-confident-man-vector-33998018.avif',
+            favFood: 'Ice Cream',
         },
         {
-            name: 'Daisy Johnson',
-            position: 'S.H.I.E.L.D. Agent',
-            image: 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2022/01/Daisy-Johnson-Quake-Agents-of-SHIELD.jpg?q=50&fit=contain&w=1140&h=&dpr=1.5',
+            name: 'Josh',
+            position: 'Chief Operations Officer & Recipe Conneisseur',
+            image: 'https://cdn.vectorstock.com/i/500p/40/40/cook-cooking-food-in-pot-cartoon-stick-figure-vector-41564040.avif',
+            favFood: 'Pineapple Pizza',
         },
         {
-            name: 'Leo Fitz',
-            position: 'S.H.I.E.L.D. Scientist',
-            image: 'https://images.squarespace-cdn.com/content/v1/5a2c77d812abd9bc7ab2b450/971a70e5-5bfb-4672-85fe-499c0838f270/IAINDECAESTECKER32225.jpg',
+            name: 'Emily',
+            position: 'Chief Marketing Officer & Design Specialist',
+            image: 'https://cdn.vectorstock.com/i/500p/62/52/painter-holding-brush-and-palette-panting-vector-40236252.avif',
+            favFood: 'Ramen',
         },
         {
-            name: 'Jemma Simmons',
-            position: 'S.H.I.E.L.D. Scientist',
-            image: 'https://hallmark.brightspotcdn.com/dims4/default/83c9a02/2147483647/strip/true/crop/1093x1093+899+24/resize/300x300!/quality/90/?url=http%3A%2F%2Fhallmark-channel-brightspot.s3.amazonaws.com%2Fd1%2F6c%2F2206d2a27d1c847f092186b5949e%2Fday01-christmasattheplaza-0589-rt.jpg',
+            name: 'Pranav',
+            position: 'Chief Technology Officer & Testing Expert',
+            image: 'https://cdn.vectorstock.com/i/500p/61/98/creative-person-typing-or-working-on-computer-vector-40236198.avif',
+            favFood: 'Burgers',
         },
         // Add more team members here
     ];
 
     return (
         <div className="team-container">
+            <h5>{welcomeMessage}</h5>
             {teamMembers.map((member, index) => (
                 <TeamMember key={index} member={member} />
             ))}
