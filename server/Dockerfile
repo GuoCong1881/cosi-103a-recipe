@@ -1,10 +1,10 @@
 FROM node:latest
 
-WORKDIR /app/backend
+WORKDIR /app
 
 COPY package*.json ./
 RUN npm install
 
-EXPOSE 3000
+EXPOSE 5000
 
-CMD ["node", "App.js"]
+CMD ["node", "server.js"]
