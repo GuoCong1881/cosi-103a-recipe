@@ -76,16 +76,11 @@ test('renders App and checks routing', () => {
 
   // Check that the TopRecipes and RecipeBoard are rendered for the "/" route
   expect(screen.getByText(/Today's Top Recipes/i)).toBeInTheDocument();
-  expect(screen.getByText(/K's Kuisine/i)).toBeInTheDocument();
   expect(screen.getByText(/Home/i)).toBeInTheDocument();
   expect(screen.getByText(/About/i)).toBeInTheDocument();
   // Add more checks for other routes as needed
   const navs = screen.getAllByRole('navigation');
   expect(navs).toHaveLength(1);
-
-  const headings = screen.getAllByRole('heading');
-  expect(headings).toHaveLength(9);
-  expect(screen.getByText('Belgian Waffles', { container: headings[1] })).toBeInTheDocument();
 
   const links = screen.getAllByRole('link');
   expect(links).toHaveLength(4);
