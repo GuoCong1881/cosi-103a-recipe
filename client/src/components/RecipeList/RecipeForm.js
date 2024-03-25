@@ -8,6 +8,8 @@ const RecipeForm = ({ setRecipes }) => {
     e.preventDefault();
     try {
       const recipe = JSON.parse(recipeJson);
+      recipe.image = recipe.image || 'https://montevista.greatheartsamerica.org/wp-content/uploads/sites/2/2016/11/default-placeholder-375x375.png';
+      recipe.link = recipe.link || recipe.name.toLowerCase().replace(/\s+/g, '-');
       await axios.post('/api/recipes', recipe);
       setRecipes((prevRecipes) => [...prevRecipes, recipe]);
       setRecipeJson('');
