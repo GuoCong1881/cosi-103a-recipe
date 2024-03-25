@@ -1,12 +1,28 @@
+# Use the official Node.js image as the base image
 FROM node:latest
 
+# Set the working directory
 WORKDIR /app
 
-COPY package*.json ./
-RUN npm install
+# Copy the package.json and package-lock.json files
+COPY server/package*.json ./server/
+COPY client/package*.json ./client/
 
-COPY src/ ./src
+COPY client ./client
+COPY server ./server
 
+# Install the dependencies for the server
+RUN npm install --prefix server
+
+# Install the dependencies for the client
+RUN npm install --prefix client
+
+# Build the React app
+RUN npm run build --prefix client
+
+# Expose the port for the server
+EXPOSE 3000
 EXPOSE 5000
 
-CMD ["node", "server.js"]
+# Start the server
+CMD ["npm", "start", "--prefix", "server"]
