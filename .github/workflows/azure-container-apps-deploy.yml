@@ -6,7 +6,7 @@ permissions:
 on:
   push:
     branches:
-      - sprint-6-irene
+      - sprint-6-irene-backend
 
 jobs:
   build:

@@ -6,7 +6,7 @@ let recipes = [
   //This code right here is for the recipe board. You can change the images, instructions,
   //and ingredients in this section here. It is the blueprint for all recipes we have.
   {
-    name: "Belgian Waffles",
+    name: "Backend Server Recipe",
     description: "Do you like waffles? Well then you’ll love Belgian waffles! Belgian waffles are basically waffles 2.0, these thick, chewy, buttery discs of deliciousness will have you hooked from the first bite.",
     ingredients: [
       "2 ¼ Cups Flour",

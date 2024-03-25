@@ -2,7 +2,7 @@ name: Run Automated Unit Tests
 on:
   push:
     branches:
-      - sprint-6-irene
+      - sprint-6-irene-backend
 
 jobs:
   test:
