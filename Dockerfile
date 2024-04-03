@@ -17,11 +17,7 @@ RUN npm install --prefix server
 # Install the dependencies for the client
 RUN npm install --prefix client
 
-# Build the React app
-RUN npm run build --prefix client
-
 # Expose the port for the server
-EXPOSE 3000
 EXPOSE 5000
 
 # Start the server
