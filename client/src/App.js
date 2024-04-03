@@ -113,6 +113,7 @@ function App() {
       const { data } = await axios.get('/api/recipes');
       console.log('Response data:', data); 
       setRecipes(data);
+      console.log('Recipes after setting:', recipes);
     };
     fetchRecipes();
   }, []);

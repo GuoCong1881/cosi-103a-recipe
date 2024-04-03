@@ -184,6 +184,14 @@ let recipes = [
 
 app.use(express.json()); // Middleware to parse JSON bodies
 
+const path = require("path");
+
+//This will inform Express.js to serve all the files from public folder
+app.use(express.static(path.join(__dirname, "..", "client", "build")));
+app.use(express.static(path.join(__dirname, "..", "client", "public")));
+
+
+
 // GET endpoint to retrieve recipes
 app.get('/api/recipes', (req, res) => {
   res.json(recipes);
@@ -200,6 +208,11 @@ app.post('/api/recipes', (req, res) => {
     res.status(400).json({ message: 'Invalid recipe format' });
   }
 });
+
+app.use((req, res, next) => {
+  res.sendFile(path.join(__dirname, "..", "client", "build", "index.html"));
+});
+
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
