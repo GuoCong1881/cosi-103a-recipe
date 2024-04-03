@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
 
 const GroceryList = ({ groceryList }) => {
     const [list, setList] = useState(groceryList);
