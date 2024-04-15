@@ -5,8 +5,9 @@
   "main": "App.js",
   "scripts": {
     "start:server": "nodemon server.js",
-    "start": "(cd ../client && yarn run build) && (cd ../server && nodemon server.js)",
+    "start": "(cd ../client && yarn run build) && (cd ../server && nodemon start.js)",
     "test": "jest"
+    
   },
   "author": "",
   "license": "ISC",
