@@ -11,6 +11,7 @@ import Team from "./components/About/Team.js";
 import GroceryList from "./components/Grocery/Grocery.js";
 import RecipeList from './components/RecipeList/RecipeList.js';
 import axios from 'axios';
+import { act } from 'react-dom/test-utils'; 
 
 // This componennt represents the header section of the app
 export function Header() {
@@ -111,9 +112,9 @@ function App() {
   useEffect(() => {
     const fetchRecipes = async () => {
       const { data } = await axios.get('/api/recipes');
-      console.log('Response data:', data); 
-      setRecipes(data);
-      console.log('Recipes after setting:', recipes);
+      act(() => {
+        setRecipes(data);
+      });
     };
     fetchRecipes();
   }, []);
