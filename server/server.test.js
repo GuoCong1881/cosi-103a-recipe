@@ -16,7 +16,6 @@ describe('server.js', function() {
 });
 
 //assert some of the post endpoints
-
 describe("Test example", () => {
   test("POST /send", (done) => {
     request(server)
