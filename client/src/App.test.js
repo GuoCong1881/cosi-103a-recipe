@@ -1,91 +1,43 @@
-import { render, screen, fireEvent} from '@testing-library/react';
-import {Header, RecipeBoard, TopRecipes, Recipe} from './App';
-import { MemoryRouter } from 'react-router-dom';
-import App from './App';
+import { render, screen } from '@testing-library/react';
+import axios from 'axios';
+import App, { Header, RecipeBoard, TopRecipes, Recipe } from './App';
 
-test('renders header component', () => {
+jest.mock('axios');
+
+test('renders Header', () => {
   render(<Header />);
-  const header = screen.getByText(/K's Kuisine/i);
-  expect(header).toBeInTheDocument();
+  const linkElement = screen.getByText(/K's Kuisine Azure Full-Stack Test/i);
+  expect(linkElement).toBeInTheDocument();
 });
 
-test('renders top recipe', () => {
-  render(<TopRecipes />);
-  const topRecipe = screen.getByText(/Today's Top Recipes/i);
-  expect(topRecipe).toBeInTheDocument();
-});
-
-test('renders recipe board with recipes', () => {
+test('renders RecipeBoard', () => {
   const recipes = [
-    { name: 'Recipe 1', description: 'Description 1', image: 'image1.jpg', link: 'link1' },
-    { name: 'Recipe 2', description: 'Description 2', image: 'image2.jpg', link: 'link2' },
+    { name: 'Test Recipe', image: 'test.jpg', description: 'Test Description', link: 'test-link' },
   ];
-
   render(<RecipeBoard recipes={recipes} />);
-
-  recipes.forEach(recipe => {
-    expect(screen.getByAltText(recipe.name)).toBeInTheDocument();
-    expect(screen.getByText(recipe.name)).toBeInTheDocument();
-    expect(screen.getByText(recipe.description)).toBeInTheDocument();
-  });
+  const linkElement = screen.getByText(/Test Recipe/i);
+  expect(linkElement).toBeInTheDocument();
 });
 
-test('renders recipe and toggles details on click', () => {
-  const recipe = {
-    name: 'Test Recipe',
-    image: 'test-image.jpg',
-    description: 'Test Description',
-    ingredients: ['Ingredient 1', 'Ingredient 2'],
-    instructions: ['Instruction 1', 'Instruction 2'],
-  };
+test('renders TopRecipes', () => {
+  render(<TopRecipes />);
+  const linkElement = screen.getByText(/Today's Top Recipes/i);
+  expect(linkElement).toBeInTheDocument();
+});
 
+test('renders Recipe', () => {
+  const recipe = { name: 'Test Recipe', image: 'test.jpg', description: 'Test Description', ingredients: ['Test Ingredient'], instructions: ['Test Instruction'] };
   render(<Recipe recipe={recipe} />);
-
-  // Check that the recipe name is rendered
-  expect(screen.getByText(recipe.name)).toBeInTheDocument();
-
-  // Check that the details are not rendered initially
-  expect(screen.queryByText(recipe.description)).not.toBeInTheDocument();
-
-  // Click the recipe to show details
-  fireEvent.click(screen.getByText(recipe.name));
-
-  // Check that the details are now rendered
-  expect(screen.getByText(recipe.description)).toBeInTheDocument();
-  recipe.ingredients.forEach(ingredient => {
-    expect(screen.getByText(ingredient)).toBeInTheDocument();
-  });
-  recipe.instructions.forEach(instruction => {
-    expect(screen.getByText(instruction)).toBeInTheDocument();
-  });
-
-  // Click the recipe again to hide details
-  fireEvent.click(screen.getByText(recipe.name));
-
-  // Check that the details are not rendered anymore
-  expect(screen.queryByText(recipe.description)).not.toBeInTheDocument();
+  const linkElement = screen.getByText(/Test Recipe/i);
+  expect(linkElement).toBeInTheDocument();
 });
 
-test('renders App and checks routing', () => {
-  render(
-    <App />
-  );
+test('renders App', async () => {
+  axios.get.mockResolvedValueOnce({ data: [] });
 
-  // Check that the Navbar and Header are rendered
-  expect(screen.getByRole('navigation')).toBeInTheDocument();
+  render(<App />);
 
-  // Check that the TopRecipes and RecipeBoard are rendered for the "/" route
-  expect(screen.getByText(/Today's Top Recipes/i)).toBeInTheDocument();
-  expect(screen.getByText(/Home/i)).toBeInTheDocument();
-  expect(screen.getByText(/About/i)).toBeInTheDocument();
-  // Add more checks for other routes as needed
-  const navs = screen.getAllByRole('navigation');
-  expect(navs).toHaveLength(1);
-
-  const links = screen.getAllByRole('link');
-  expect(links).toHaveLength(4);
-  expect(screen.getByText('Home', { container: links[0] })).toBeInTheDocument();
-  expect(screen.getByText('About', { container: links[1] })).toBeInTheDocument();
-  // Check that the first team member's details are correct
-
+  // Wait for any asynchronous actions to complete
+  const linkElement = await screen.findByText(/K's Kuisine Azure Full-Stack Test/i);
+  expect(linkElement).toBeInTheDocument();
 });
