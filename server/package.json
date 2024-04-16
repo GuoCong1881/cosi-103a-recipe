@@ -5,7 +5,7 @@
   "main": "App.js",
   "scripts": {
     "start:server": "nodemon server.js",
-    "start": "(cd ../client && yarn run build) && (cd ../server && nodemon start.js)",
+    "start": "(cd ../client && yarn run build) && (cd ../server && nodemon server.js)",
     "test": "jest"
   },
   "author": "",
